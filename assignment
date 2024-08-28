@@ -1,0 +1,35 @@
+// 1. Variable to hold the number of NFTs
+let nftCollection = [];
+
+// 2. Function to mint NFT
+function mintNFT(name, description, image) {
+    const nft = {
+        name: name,
+        description: description,
+        image: image
+    };
+    nftCollection.push(nft);
+}
+
+// 3. Function to list all NFTs
+function listNFTs() {
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log("NFT #" + (i + 1));
+        console.log("Name: " + nftCollection[i].name);
+        console.log("Description: " + nftCollection[i].description);
+        console.log("Image: " + nftCollection[i].image);
+        console.log("------------------------");
+    }
+}
+
+// 4. Function to get the total supply of NFTs
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Example usage:
+mintNFT("Cool Cat", "A very cool cat NFT", "coolcat.jpg");
+mintNFT("Bored Ape", "A bored ape from the famous collection", "boredape.png");
+
+listNFTs();
+console.log("Total NFTs minted: " + getTotalSupply());
